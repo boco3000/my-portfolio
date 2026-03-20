@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Project = {
   title: string;
   category: string;
@@ -6,7 +8,7 @@ type Project = {
   tags: string[];
   live: string;
   code: string;
-  accent: string;
+  image: string;
 };
 
 type ProjectCardProps = {
@@ -14,28 +16,40 @@ type ProjectCardProps = {
   featured?: boolean;
 };
 
-export function ProjectCard({
-  project,
-  featured = false,
-}: ProjectCardProps) {
+export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   return (
     <article
       className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.045] ${
         featured ? "lg:col-span-2" : ""
       }`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-neutral-900">
-        <div className={`absolute inset-0 bg-gradient-to-br ${project.accent}`} />
-        <div className="absolute inset-0 opacity-50 [background-image:linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:34px_34px] transition duration-300 group-hover:scale-[1.02]" />
+      <div
+        className={`relative overflow-hidden border-b border-white/10 bg-neutral-900 ${
+          featured ? "aspect-[16/9]" : "aspect-[16/10]"
+        }`}
+      >
+        <Image
+          src={project.image}
+          alt={`${project.title} project preview`}
+          fill
+          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+          sizes={
+            featured
+              ? "(min-width: 1024px) 66vw, 100vw"
+              : "(min-width: 1024px) 33vw, 100vw"
+          }
+        />
 
-        <div className="absolute inset-x-6 top-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-white/55">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+        <div className="absolute inset-x-6 top-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-white/70">
           <span>{project.category}</span>
           <span>Preview</span>
         </div>
 
         <div className="absolute inset-x-6 bottom-6">
-          <div className="max-w-lg rounded-xl border border-white/10 bg-black/25 px-4 py-3 backdrop-blur-sm">
-            <div className="mb-1 text-sm text-white/55">{project.title}</div>
+          <div className="max-w-lg rounded-xl border border-white/10 bg-black/30 px-4 py-3 backdrop-blur-sm">
+            <div className="mb-1 text-sm text-white/65">{project.title}</div>
             <div className="text-lg font-medium tracking-[-0.03em] text-white">
               Structured, polished, business-facing design.
             </div>
@@ -74,10 +88,20 @@ export function ProjectCard({
         </div>
 
         <div className="flex items-center gap-5 pt-1 text-sm text-white/72">
-          <a href={project.live} className="transition hover:text-white">
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-white"
+          >
             Live Site
           </a>
-          <a href={project.code} className="transition hover:text-white">
+          <a
+            href={project.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-white"
+          >
             View Code
           </a>
         </div>

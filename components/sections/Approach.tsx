@@ -1,30 +1,5 @@
 import { Container } from "@/components/layout/Container";
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div className="max-w-2xl space-y-3">
-      {eyebrow ? (
-        <p className="text-xs uppercase tracking-[0.22em] text-white/45">
-          {eyebrow}
-        </p>
-      ) : null}
-      <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white md:text-3xl">
-        {title}
-      </h2>
-      {description ? (
-        <p className="text-base leading-7 text-white/65">{description}</p>
-      ) : null}
-    </div>
-  );
-}
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Approach() {
   return (

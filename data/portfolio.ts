@@ -3,13 +3,13 @@ export const projects = [
     title: "Northpeak Climate",
     category: "Service-business website",
     description:
-      "A modern HVAC website focused on trust, service clarity, and responsive presentation.",
+      "A modern HVAC website designed to improve trust, clarity, and service presentation.",
     details:
       "Designed and built with strong hierarchy, clean service sections, and a polished business-facing layout.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
-    live: "#",
-    code: "#",
-    accent: "from-white/10 to-white/0",
+    live: "https://northpeak-climate.vercel.app/",
+    code: "https://github.com/boco3000/northpeak-climate",
+    image: "/images/projects/northpeak-climate.jpg",
   },
   {
     title: "The Brave",
@@ -19,9 +19,9 @@ export const projects = [
     details:
       "Focused on art direction, rhythm, and a tighter editorial feel while keeping the experience simple.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
-    live: "#",
-    code: "#",
-    accent: "from-white/10 to-white/0",
+    live: "https://the-brave-studio.vercel.app/",
+    code: "https://github.com/boco3000/the-brave-studio",
+    image: "/images/projects/the-brave.jpg",
   },
   {
     title: "Arc Dashboard",
@@ -31,21 +31,9 @@ export const projects = [
     details:
       "Built with reusable UI patterns, strong spacing, and a focus on hierarchy and usability.",
     tags: ["React", "TypeScript", "Tailwind"],
-    live: "#",
-    code: "#",
-    accent: "from-white/10 to-white/0",
-  },
-  {
-    title: "Oddjobs",
-    category: "Service platform concept",
-    description:
-      "A responsive concept built around usability, scalable layout, and straightforward navigation.",
-    details:
-      "Designed to present a task-based platform clearly while keeping the interface flexible and clean.",
-    tags: ["Next.js", "JavaScript", "Tailwind"],
-    live: "#",
-    code: "#",
-    accent: "from-white/10 to-white/0",
+    live: "https://arc-client-portal-delta.vercel.app/dashboard",
+    code: "https://github.com/boco3000/arc-client-portal",
+    image: "/images/projects/arc-dashboard.jpg",
   },
 ];
 
