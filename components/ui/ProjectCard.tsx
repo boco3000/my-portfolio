@@ -19,7 +19,7 @@ type ProjectCardProps = {
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   return (
     <article
-      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.045] ${
+      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-border)] hover:bg-white/[0.045] ${
         featured ? "lg:col-span-2" : ""
       }`}
     >
@@ -32,7 +32,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           src={project.image}
           alt={`${project.title} project preview`}
           fill
-          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+          className="object-cover transition duration-500 ease-out group-hover:scale-[1.02]"
           sizes={
             featured
               ? "(min-width: 1024px) 66vw, 100vw"
@@ -40,7 +40,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           }
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
 
         <div className="absolute inset-x-6 top-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-white/70">
           <span>{project.category}</span>
@@ -60,7 +60,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       <div className="space-y-5 p-6">
         <div className="space-y-3">
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-xl font-semibold tracking-[-0.04em] text-white">
+            <h3 className="text-xl font-semibold tracking-[-0.05em] text-white md:text-[22px]">
               {project.title}
             </h3>
 
@@ -69,11 +69,11 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             </span>
           </div>
 
-          <p className="text-base leading-7 text-white/82">
+          <p className="text-base leading-7 text-white/78 md:text-[17px]">
             {project.description}
           </p>
 
-          <p className="text-sm leading-6 text-white/58">{project.details}</p>
+          <p className="text-sm leading-7 text-white/55">{project.details}</p>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -92,7 +92,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-white"
+            className="transition hover:text-[var(--accent)]"
           >
             Live Site
           </a>
@@ -100,7 +100,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-white"
+            className="transition hover:text-[var(--accent)]"
           >
             View Code
           </a>

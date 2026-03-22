@@ -1,10 +1,12 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-16 md:py-18">
       <Container>
+        <FadeIn>
         <div className="max-w-3xl space-y-6">
           <SectionHeading
             eyebrow="About"
@@ -25,6 +27,7 @@ export function About() {
             </p>
           </div>
         </div>
+        </FadeIn>
       </Container>
     </section>
   );
