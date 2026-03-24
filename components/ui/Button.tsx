@@ -13,7 +13,7 @@ export function Button({ href, children, variant = "primary" }: ButtonProps) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium tracking-[-0.02em] transition-all duration-300 hover:-translate-y-0.5 ${styles}`}
+      className={`inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium tracking-[-0.02em] transition-all duration-300 hover:-translate-y-0.5 ${styles}`}
     >
       {children}
     </a>

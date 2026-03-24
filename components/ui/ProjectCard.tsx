@@ -40,35 +40,30 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           }
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
 
-        <div className="absolute inset-x-6 top-6 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-white/70">
-          <span>{project.category}</span>
-          <span>Preview</span>
+        <div className="absolute inset-x-6 top-6">
+          <div className="inline-flex items-center rounded-md border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-white/80">
+              {project.category}
+            </span>
+          </div>
         </div>
 
         <div className="absolute inset-x-6 bottom-6">
-          <div className="max-w-lg rounded-xl border border-white/10 bg-black/30 px-4 py-3 backdrop-blur-sm">
-            <div className="mb-1 text-sm text-white/65">{project.title}</div>
-            <div className="text-lg font-medium tracking-[-0.03em] text-white">
-              Structured, polished, business-facing design.
-            </div>
+          <div className="max-w-xl bg-black/20 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/10">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--accent)]/90">
+              Selected Project
+            </p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-[-0.05em] text-white md:text-[28px]">
+              {project.title}
+            </h3>
           </div>
         </div>
       </div>
 
-      <div className="space-y-5 p-6">
+      <div className="space-y-5 p-6 md:p-7">
         <div className="space-y-3">
-          <div className="flex items-start justify-between gap-4">
-            <h3 className="text-xl font-semibold tracking-[-0.05em] text-white md:text-[22px]">
-              {project.title}
-            </h3>
-
-            <span className="mt-1 rounded-full border border-white/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-white/45">
-              Case
-            </span>
-          </div>
-
           <p className="text-base leading-7 text-white/78 md:text-[17px]">
             {project.description}
           </p>
@@ -76,23 +71,25 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           <p className="text-sm leading-7 text-white/55">{project.details}</p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/55"
+              className={`rounded-full border border-white/10 bg-white/[0.03] py-1 leading-none text-white/55 ${
+                featured ? "px-3 text-xs" : "px-2.5 text-[11px]"
+              }`}
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-5 pt-1 text-sm text-white/72">
+        <div className="flex items-center gap-5 pt-1 text-sm tracking-[-0.02em] text-white/72">
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-[var(--accent)]"
+            className="transition-colors duration-300 hover:text-[var(--accent)]"
           >
             Live Site
           </a>
@@ -100,7 +97,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-[var(--accent)]"
+            className="transition-colors duration-300 hover:text-[var(--accent)]"
           >
             View Code
           </a>

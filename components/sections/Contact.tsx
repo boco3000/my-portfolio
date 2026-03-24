@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Mail } from "lucide-react";
 
 export function Contact() {
   return (
@@ -22,10 +23,11 @@ export function Contact() {
 
             <div className="pt-2">
               <a
-                href="mailto:bo.theoddjobsapp.com"
-                className="inline-flex items-center text-base font-medium tracking-[-0.02em] text-white transition-colors duration-300 hover:text-[var(--accent)]"
+                href="mailto:bo@theoddjobsapp.com?subject=Project Inquiry"
+                className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-medium tracking-[-0.02em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent-border)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent)]"
               >
-                bo.theoddjobsapp.com
+                <Mail size={14} />
+                bo@theoddjobsapp.com
               </a>
             </div>
           </div>

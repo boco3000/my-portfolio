@@ -8,8 +8,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Bo Cochran | Portfolio",
-  description: "Portfolio of Bo Cochran, independent web developer.",
+  title: "Bo Cochran — Web Developer",
+  description:
+    "Independent web developer building modern websites and interfaces focused on clarity, structure, and polish.",
 };
 
 export default function RootLayout({
