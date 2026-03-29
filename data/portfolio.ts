@@ -10,7 +10,9 @@ export const projects = [
     live: "https://northpeak-climate.vercel.app/",
     code: "https://github.com/boco3000/northpeak-climate",
     image: "/images/projects/northpeak-climate.jpg",
+    featured:true,
   },
+
   {
     title: "The Brave",
     category: "Brand / studio website",
@@ -22,7 +24,23 @@ export const projects = [
     live: "https://the-brave-studio.vercel.app/",
     code: "https://github.com/boco3000/the-brave-studio",
     image: "/images/projects/the-brave.jpg",
+    featured: false,
   },
+
+  {
+  title: "Flow Plumbing",
+  category: "Service landing page",
+  description:
+    "A high-conversion, mobile-first landing page for a local plumbing service.",
+  details:
+    "Built to increase calls and service requests through strong hierarchy, trust-focused design, and clear call-to-action structure.",
+  tags: ["Vite", "Typescript", "Tailwind"],
+  live: "https://flow-plumbing.vercel.app/",
+  code: "https://github.com/boco3000/plumbing-landing",
+  image: "/images/projects/flow-plumbing.jpg",
+  featured: false,
+},
+
   {
     title: "Arc Dashboard",
     category: "Workflow dashboard",
@@ -34,6 +52,7 @@ export const projects = [
     live: "https://arc-client-portal-delta.vercel.app/dashboard",
     code: "https://github.com/boco3000/arc-client-portal",
     image: "/images/projects/arc-dashboard.jpg",
+    featured: false,
   },
 ];
 

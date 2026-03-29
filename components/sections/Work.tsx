@@ -1,10 +1,14 @@
 import { Container } from "@/components/layout/Container";
-import { ProjectCard } from "@/components/ui/ProjectCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { projects } from "@/data/portfolio";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { FeaturedProjectCard } from "@/components/ui/FeaturedProjectCard";
+import { ProjectListItem } from "@/components/ui/ProjectListItem";
+import { projects } from "@/data/portfolio";
 
 export function Work() {
+  const featuredProject = projects.find((project) => project.featured);
+  const listProjects = projects.filter((project) => !project.featured);
+
   return (
     <section id="work" className="pt-4 pb-20 md:pt-8 md:pb-24">
       <Container>
@@ -12,15 +16,21 @@ export function Work() {
           <SectionHeading
             eyebrow="Selected work"
             title="A curated selection of projects across business websites and interfaces."
-            description="Real projects presented clearly, with an emphasis on layout, hierarchy, responsiveness, and polish."
+            description="Recent work focused on clarity, hierarchy, responsiveness, and polished presentation."
           />
         </FadeIn>
 
-        <FadeIn delay={0.05}>
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            <ProjectCard project={projects[0]} featured />
-            <ProjectCard project={projects[1]} />
-            <ProjectCard project={projects[2]} />
+        {featuredProject ? (
+          <FadeIn delay={0.05} className="mt-10">
+            <FeaturedProjectCard project={featuredProject} />
+          </FadeIn>
+        ) : null}
+
+        <FadeIn delay={0.08} className="mt-10">
+          <div className="space-y-0">
+            {listProjects.map((project) => (
+              <ProjectListItem key={project.title} project={project} />
+            ))}
           </div>
         </FadeIn>
       </Container>
